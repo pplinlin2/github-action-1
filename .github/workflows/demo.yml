@@ -18,6 +18,10 @@ jobs:
           docker-compose up -d
           docker ps -a
           docker logs ${{ github.event.repository.name }}_api-tests_1
+          echo 'zzzzzzzzz'
+          sleep 3
+          docker-compose up -d api-tests
+          docker logs ${{ github.event.repository.name }}_api-tests_1
           ls -l tests/
           ls -l tests/newman
 
