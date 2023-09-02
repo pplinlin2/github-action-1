@@ -11,19 +11,17 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Build API service
-        run: docker-compose build
+        run: docker-compose build api
 
-      - name: Start API service & API Testing with Newman
+      - name: Start API service
+        run: docker-compose up -d api nginx
+
+      - name: API Testing with Newman
         run: |
-          docker-compose up -d
-          docker ps -a
-          docker logs ${{ github.event.repository.name }}_api-tests_1
-          echo 'zzzzzzzzz'
-          sleep 3
           docker-compose up -d api-tests
           docker logs ${{ github.event.repository.name }}_api-tests_1
-          ls -l tests/
-          ls -l tests/newman
+          ls -l tests
+          # ls -l tests/newman
 
       - name: Get testing results
         uses: actions/upload-artifact@v3
