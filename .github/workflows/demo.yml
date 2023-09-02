@@ -16,6 +16,7 @@ jobs:
       - name: Start API service & API Testing with Newman
         run: |
           docker-compose up -d
+          docker ps -a
           docker logs ${{ github.event.repository.name }}_api-tests_1
           ls -l tests/
           ls -l tests/newman
