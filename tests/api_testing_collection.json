@@ -237,7 +237,7 @@
 	"variable": [
 		{
 			"key": "base_url",
-			"value": "http://localhost"
+			"value": "http://nginx"
 		},
 		{
 			"key": "username",

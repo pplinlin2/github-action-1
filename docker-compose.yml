@@ -1,16 +1,25 @@
-version: '3.8'
+version: "3"
 
 services:
   api:
     build: ./api
     image: demo-api
-    depends_on:
-      - nginx
 
   nginx:
     image: nginx:1.25.2
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
     ports:
-      - 80:80
+      - "80:80"
+    depends_on:
+      - api
+
+  api-tests:
+    build: ./tests
+    image: demo-api-test
+    volumes:
+      - ./tests:/etc/newman
+    command: run api_testing_collection.json --folder RESTful-API -r cli,htmlextra
+    depends_on:
+      - nginx
 
