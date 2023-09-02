@@ -24,6 +24,9 @@ jobs:
         run: docker-compose up -d
         working-directory: ./api
 
+      - name: Wait
+        run: sleep 5s
+
       - name: API Testing with Newman
         run: newman run api_testing_collection.json --folder RESTful-API
         working-directory: ./tests
