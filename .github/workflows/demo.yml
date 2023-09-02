@@ -2,7 +2,7 @@ on: workflow_dispatch
 jobs:
   first-jobs:
     runs-on: ubuntu-latest
-    container: node-17.6.0
+    container: node:20-alpine
     steps:
       - run: node --version
       - run: npm --version
