@@ -16,12 +16,13 @@ jobs:
       - name: Start API service
         run: docker-compose up -d api nginx
 
-      - name: API Testing with Newman
+      - name: Build testing environment
+        run: docker-compose build api-tests
+
+      - name: API testing with newman
         run: |
           docker-compose up -d api-tests
           docker logs ${{ github.event.repository.name }}_api-tests_1
-          ls -l tests
-          # ls -l tests/newman
 
       - name: Get testing results
         uses: actions/upload-artifact@v3

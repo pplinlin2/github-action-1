@@ -15,7 +15,8 @@ services:
       - api
 
   api-tests:
-    image: postman/newman:latest
+    build: ./tests
+    image: demo-api-tests
     volumes:
       - ./tests:/etc/newman
     command: run api_testing_collection.json --folder RESTful-API
