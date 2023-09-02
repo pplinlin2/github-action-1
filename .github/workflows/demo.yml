@@ -1,8 +1,30 @@
-on: workflow_dispatch
+name: API Testing with Newman
+
+on:
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  first-jobs:
+  build-test-deploy:
     runs-on: ubuntu-latest
-    container: node:20-alpine
+
     steps:
-      - run: node --version
-      - run: npm --version
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Build API service
+        run: docker-compose build
+        working-directory: ./api
+
+      - name: Start API service
+        run: docker-compose up -d
+        working-directory: ./api
+
+      - name: API Testing with Newman
+        run: newman run tests/api_testing_collection.json
+        working-directory: ./tests
+

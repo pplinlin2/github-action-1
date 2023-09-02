@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    image: demo-api
+    depends_on:
+      - nginx
+
+  nginx:
+    image: nginx:1.25.2
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 80:80
+

@@ -1,0 +1,34 @@
+# Python-specific
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.swp
+*.swo
+*.coverage
+.coverage
+.coverage.*
+.idea/
+.vscode/
+*.log
+logs/
+*.pid
+
+# Node.js-specific
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Common
+.env
+.env.local
+.env.*.local
+.env.test
+.env.test.local
+
