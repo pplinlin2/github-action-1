@@ -17,11 +17,7 @@ jobs:
         run: docker-compose up -d api nginx
 
       - name: API testing with newman
-        run: |
-          docker-compose up api-tests
-          sleep 3
-          docker-compose up api-tests
-          docker ps -a
+        run: docker-compose up api-tests
 
       - name: Get testing results
         uses: actions/upload-artifact@v3
