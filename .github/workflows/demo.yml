@@ -25,6 +25,6 @@ jobs:
         working-directory: ./api
 
       - name: API Testing with Newman
-        run: newman run tests/api_testing_collection.json
+        run: newman run api_testing_collection.json
         working-directory: ./tests
 
