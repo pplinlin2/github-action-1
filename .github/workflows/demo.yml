@@ -22,5 +22,5 @@ jobs:
       - name: Get testing results
         uses: actions/upload-artifact@v3
         with:
-          - name: api-testing-result
-          - ./tests/newman/
+          name: api-testing-result
+          path: tests/newman/
