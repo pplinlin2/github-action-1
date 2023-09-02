@@ -21,7 +21,9 @@ jobs:
 
       - name: API testing with newman
         run: |
+          docker ps -a
           docker-compose up -d api-tests
+          docker ps -a
           docker logs ${{ github.event.repository.name }}_api-tests_1
 
       - name: Get testing results
