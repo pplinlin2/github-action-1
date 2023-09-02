@@ -13,18 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Newman
-        run: npm install -g newman
-
       - name: Build API service
         run: docker-compose build
-        working-directory: ./api
 
-      - name: Start API service
+      - name: Start API service & API Testing with Newman
         run: docker-compose up -d
-        working-directory: ./api
 
-      - name: API Testing with Newman
-        run: newman run api_testing_collection.json --folder RESTful-API
-        working-directory: ./tests
-
+      - name: Get testing results
+        uses: actions/upload-artifact@v3
+        with:
+          - name: api-testing-result
+          - ./tests/newman/
