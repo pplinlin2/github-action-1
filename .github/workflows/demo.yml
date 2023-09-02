@@ -17,7 +17,11 @@ jobs:
         run: docker-compose build
 
       - name: Start API service & API Testing with Newman
-        run: docker-compose up -d
+        run: |
+          docker-compose up -d
+          docker logs ${{ github.event.repository.name }}_api-tests_1
+          ls -l tests/
+          ls -l tests/newman
 
       - name: Get testing results
         uses: actions/upload-artifact@v3
