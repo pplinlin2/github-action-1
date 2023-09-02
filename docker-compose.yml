@@ -15,11 +15,10 @@ services:
       - api
 
   api-tests:
-    build: ./tests
-    image: demo-api-test
+    image: postman/newman:latest
     volumes:
       - ./tests:/etc/newman
-    command: run api_testing_collection.json --folder RESTful-API -r cli,htmlextra
+    command: run api_testing_collection.json --folder RESTful-API
     depends_on:
       - nginx
 
