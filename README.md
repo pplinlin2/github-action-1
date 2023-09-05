@@ -6,7 +6,7 @@ Welcome to the **DevOps in the Nutshell** project! This demo project showcases a
 In this project, we've put together a backend web application built with Flask that connects to a MongoDB database. We utilize Nginx as the web server for serving the application. The project demonstrates the entire DevOps cycle, including development, testing, deployment, and monitoring.
 
 ## Technology Stack
-<img src="./images/devops.png" width="800px"/>
+<img src="images/devops.png" width="800px"/>
 
 | Aspect                         | Description                                                                                                              |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
@@ -22,14 +22,14 @@ In this project, we've put together a backend web application built with Flask t
 ## Screenshots
 ### API Call
 
-![API Call](screenshots/api_call.png)
+![API Call](images/api_call.png)
 
 Description: An example of making an API call to the Flask web application.
 
 ### Test Result of Postman
-![Test Result of Postman](screenshots/postman_test_result.png)
+A screenshot showing the test results from Postman scripts used for automated testing.
 
-Description: A screenshot showing the test results from Postman scripts used for automated testing.
+<img src="images/newman_test.png" width="800px"/>
 
 ### Dashboard in Kibana
 
