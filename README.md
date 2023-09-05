@@ -3,7 +3,7 @@
 Welcome to the **DevOps in the Nutshell** project! This demo project showcases an end-to-end DevOps procedure using a combination of technologies to highlight the various stages involved in modern software development, from coding to deployment and operations.
 
 ## Overview
-In this project, we've put together a backend web application built with Flask that connects to a MongoDB database. We utilize Nginx as the web server for serving the application. The project demonstrates the entire DEVOPS cycle, including development, testing, deployment, and monitoring.
+In this project, we've put together a backend web application built with Flask that connects to a MongoDB database. We utilize Nginx as the web server for serving the application. The project demonstrates the entire DevOps cycle, including development, testing, deployment, and monitoring.
 
 ## Technology Stack
 <img src="./images/devops.png" width="800px"/>
