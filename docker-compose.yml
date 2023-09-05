@@ -4,6 +4,11 @@ services:
   api:
     build: ./api
     image: demo-api
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:6.0.3
 
   nginx:
     image: nginx:1.25.2
@@ -19,7 +24,7 @@ services:
     image: demo-api-tests
     volumes:
       - ./tests:/etc/newman
-    command: run api_testing_collection.json --folder RESTful-API -r cli,htmlextra
+    command: run DevOps_in_a_nutshell.postman_collection.json -r cli,htmlextra
     depends_on:
       - nginx
 
