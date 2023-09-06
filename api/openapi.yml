@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: DevOps_in_a_nutshell
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://nginx
+paths:
+  /login:
+    post:
+      tags:
+        - release_acceptance_test
+      summary: Login
+      description: Login
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: qwerty
+                username:
+                  type: string
+                  example: admin
+            example:
+              password: qwerty
+              username: admin
+      responses:
+        '200':
+          description: ''
+  /movies:
+    get:
+      tags:
+        - release_acceptance_test
+      summary: Get all movies Copy
+      description: Get all movies Copy
+      operationId: getAllMoviesCopy
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - release_acceptance_test
+      summary: Create a new movie Copy
+      description: Create a new movie Copy
+      operationId: createANewMovieCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                genres:
+                  type: string
+                  example: Action
+                title:
+                  type: string
+                  example: 'Mission: Impossible'
+            example:
+              genres: Action
+              title: 'Mission: Impossible'
+      responses:
+        '200':
+          description: ''
+  /movies/{movie_id}:
+    get:
+      tags:
+        - release_acceptance_test
+      summary: Get a specific movie Copy
+      description: Get a specific movie Copy
+      operationId: getASpecificMovieCopy
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+        - release_acceptance_test
+      summary: Delete a movie Copy
+      description: Delete a movie Copy
+      operationId: deleteAMovieCopy
+      responses:
+        '200':
+          description: ''
+    patch:
+      tags:
+        - release_acceptance_test
+      summary: Partial update of a movie Copy
+      description: Partial update of a movie Copy
+      operationId: partialUpdateOfAMovieCopy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                genres:
+                  type: string
+                  example: Adventure
+            example:
+              genres: Adventure
+      responses:
+        '200':
+          description: ''
+    parameters:
+      - name: movie_id
+        in: path
+        required: true
+        schema:
+          type: string
+tags:
+  - name: release_acceptance_test
+

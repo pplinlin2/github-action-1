@@ -28,3 +28,11 @@ services:
     depends_on:
       - nginx
 
+  api-docs:
+    image: swaggerapi/swagger-ui:v5.0.0
+    volumes:
+      - ./api/openapi.yml:/mnt/openapi.yml
+    ports:
+      - "8080:8080"
+    environment:
+      - SWAGGER_JSON=/mnt/openapi.yml
