@@ -21,10 +21,9 @@ In this project, we've put together a backend web application built with Flask t
 
 ## Screenshots
 ### API Call
+"The supported APIs of the Flask web application are displayed using Swagger UI.
 
-![API Call](images/api_call.png)
-
-Description: An example of making an API call to the Flask web application.
+<img src="images/openapi.png" width="800px"/>
 
 ### Test Result of Postman
 A screenshot showing the test results from Postman scripts used for automated testing.
