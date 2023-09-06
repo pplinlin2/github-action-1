@@ -1,115 +1,118 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
   title: DevOps_in_a_nutshell
   version: 1.0.0
-  contact: {}
 servers:
-  - url: http://nginx
+  - url: http://{{base_url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: release_acceptance_test
 paths:
   /login:
     post:
       tags:
         - release_acceptance_test
       summary: Login
-      description: Login
-      operationId: login
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties:
-                password:
-                  type: string
-                  example: qwerty
-                username:
-                  type: string
-                  example: admin
-            example:
-              password: qwerty
-              username: admin
+              example:
+                username: '{{username}}'
+                password: '{{password}}'
       responses:
         '200':
-          description: ''
+          description: Successful response
+          content:
+            application/json: {}
   /movies:
-    get:
-      tags:
-        - release_acceptance_test
-      summary: Get all movies Copy
-      description: Get all movies Copy
-      operationId: getAllMoviesCopy
-      responses:
-        '200':
-          description: ''
     post:
       tags:
         - release_acceptance_test
       summary: Create a new movie Copy
-      description: Create a new movie Copy
-      operationId: createANewMovieCopy
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties:
-                genres:
-                  type: string
-                  example: Action
-                title:
-                  type: string
-                  example: 'Mission: Impossible'
-            example:
-              genres: Action
-              title: 'Mission: Impossible'
+              example:
+                title: '{{movie_title}}'
+                genres: '{{movie_genres}}'
+      security:
+        - bearerAuth: []
+      responses:
+        '201':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - release_acceptance_test
+      summary: Get all movies Copy
       responses:
         '200':
-          description: ''
+          description: Successful response
+          content:
+            application/json: {}
   /movies/{movie_id}:
     get:
       tags:
         - release_acceptance_test
       summary: Get a specific movie Copy
-      description: Get a specific movie Copy
-      operationId: getASpecificMovieCopy
+      parameters:
+        - name: movie_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
-          description: ''
-    delete:
-      tags:
-        - release_acceptance_test
-      summary: Delete a movie Copy
-      description: Delete a movie Copy
-      operationId: deleteAMovieCopy
-      responses:
-        '200':
-          description: ''
+          description: Successful response
+          content:
+            application/json: {}
     patch:
       tags:
         - release_acceptance_test
       summary: Partial update of a movie Copy
-      description: Partial update of a movie Copy
-      operationId: partialUpdateOfAMovieCopy
       requestBody:
         content:
           application/json:
             schema:
               type: object
-              properties:
-                genres:
-                  type: string
-                  example: Adventure
-            example:
-              genres: Adventure
+              example:
+                genres: Adventure
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: movie_id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
-          description: ''
-    parameters:
-      - name: movie_id
-        in: path
-        required: true
-        schema:
-          type: string
-tags:
-  - name: release_acceptance_test
-
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - release_acceptance_test
+      summary: Delete a movie Copy
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: movie_id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
