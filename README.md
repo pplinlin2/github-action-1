@@ -34,3 +34,4 @@ A screenshot showing the test results from Postman scripts used for automated te
 A dashboard in Kibana visualizing log and performance data from the deployed application.
 
 <img src="images/kibana.png" width="800px"/>
+
