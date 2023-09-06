@@ -20,17 +20,17 @@ In this project, we've put together a backend web application built with Flask t
 | Dashboard                      | Kibana is employed to craft an informative real-time dashboard, offering insights into application performance and status.|
 
 ## Screenshots
-### API Call
+### API Document
 The supported APIs of the Flask web application are displayed using Swagger UI.
 
 <img src="images/openapi.png" width="800px"/>
 
-### Test Result of Postman
+### Test Result
 A screenshot showing the test results from Postman scripts used for automated testing.
 
 <img src="images/newman_test.png" width="800px"/>
 
-### Dashboard in Kibana
+### Dashboard
 A dashboard in Kibana visualizing log and performance data from the deployed application.
 
 <img src="images/kibana.png" width="800px"/>
