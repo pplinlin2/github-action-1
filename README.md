@@ -31,7 +31,6 @@ A screenshot showing the test results from Postman scripts used for automated te
 <img src="images/newman_test.png" width="800px"/>
 
 ### Dashboard in Kibana
+A dashboard in Kibana visualizing log and performance data from the deployed application.
 
-![Dashboard in Kibana](screenshots/kibana_dashboard.png)
-
-Description: A dashboard in Kibana visualizing log and performance data from the deployed application.
+<img src="images/kibana.png" width="800px"/>
